@@ -56,7 +56,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             hash: true,
-            title: 'My awesome service',
+            title: 'Test page',
             template: './src/index.hbs'
         }),
         new MiniCssExtractPlugin({
