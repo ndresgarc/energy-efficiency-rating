@@ -1,6 +1,8 @@
 # energy-efficency-rating
 
-A Energy Efficiency Rating visualization using CSS
+A Energy Efficiency Rating visualization component
+
+Available in CSS, Web component and React
 
 An Energy Efficiency Rating is also known as Energy Performance Rating.
 
