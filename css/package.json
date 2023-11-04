@@ -1,0 +1,13 @@
+{
+  "name": "energy-efficiency-rating-css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  },
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded ./src/:./dist",
+    "sass-prod": "sass --no-source-map --style=compressed ./src/:./dist"
+  }
+}
