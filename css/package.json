@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "lite-server": "^2.6.1",
     "sass": "^1.69.5"
   },
   "scripts": {
     "sass-dev": "sass --watch --update --style=expanded ./src/:./dist",
-    "sass-prod": "sass --no-source-map --style=compressed ./src/:./dist"
+    "sass-prod": "sass --no-source-map --style=compressed ./src/:./dist",
+    "dev": "lite-server"
   }
 }
