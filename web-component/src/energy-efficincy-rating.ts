@@ -1,20 +1,19 @@
-import energyEfficiencyRatingStyle from "./energy-efficiency-rating.scss";
-
 class EnergyEfficiencyRating extends HTMLElement {
 
+    _shadowRoot: ShadowRoot;
+    _template: HTMLTemplateElement = document.createElement('template');
+    
     constructor() {
         super();
+        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
+        this._template.innerHTML = this.template();
+        this._shadowRoot.appendChild(this._template.content.cloneNode(true));
+    }
 
-        /*
-        
-            const shadow = this.attachShadow({ mode: "open" });
-
-            const div = document.createElement("div");
-            const style = document.createElement("style");
-            shadow.appendChild(style);
-            shadow.appendChild(div);
-
-        */
+    template() {
+        return `
+            <div>Base template</div>
+        `;
     }
 
     connectedCallback() {
@@ -30,7 +29,7 @@ class EnergyEfficiencyRating extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['name'];
+        return ['score'];
     }
 
     attributeChangedCallback(attributeName: string, oldValue: string, newValue: string) {
