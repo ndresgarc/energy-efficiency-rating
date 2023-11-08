@@ -1,16 +1,24 @@
+import {
+    AttributeName,
+    Score
+} from './types';
+
 class EnergyEfficiencyRating extends HTMLElement {
 
     _shadowRoot: ShadowRoot;
-    _template: HTMLTemplateElement = document.createElement('template');
+    _template: HTMLTemplateElement;
+    _score: Score;
     
     constructor() {
         super();
         this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-        this._template.innerHTML = this.template();
+        this._template = document.createElement('template');
+        this._template.innerHTML = this.initTemplate();
         this._shadowRoot.appendChild(this._template.content.cloneNode(true));
+        this._score = this.getAttribute('score') as Score;
     }
 
-    template() {
+    initTemplate() {
         return `
             <div>Base template</div>
         `;
